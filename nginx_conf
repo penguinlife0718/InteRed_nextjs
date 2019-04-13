@@ -1,0 +1,14 @@
+events {
+
+}
+http {
+	server {
+		listen 8001;
+		server_name localhost;
+		location / {
+			proxy_pass http://ec2-13-230-4-251.ap-northeast-1.compute.amazonaws.com:8000;
+			proxy_cookie_domain ec2-13-230-4-251.ap-northeast-1.compute.amazonaws.com:8000 localhost;
+			
+		}
+	}
+}
